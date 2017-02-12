@@ -1,0 +1,77 @@
+<!--
+<div class="modal fade" id="InfoModal" tabindex="-1" role="dialog" aria-labelledby="InfoModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="InfoModalLabel">
+				info
+				</h4>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+					Close
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+-->
+
+<div class="info">
+
+	<div class="row">
+		<div class="col-md-6">
+
+			<div class="panel panel-default info">
+				<div class="panel-heading">
+					<strong><f:translate key="info.legend"></f:translate></strong>
+				</div>
+				<div class="panel-body">
+					<span class="glyphicon glyphicon-stop is-installed"></span>
+					<span class="description">
+						<f:translate key="info.extension_is_installed"></f:translate>
+					</span>
+					<hr class="fine-line" />
+					<span class="glyphicon glyphicon-stop is-not-installed"></span>
+					<span class="description">
+						<f:translate key="info.extension_is_not_installed"></f:translate>
+					</span>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-6">
+
+			<div class="panel panel-default info">
+				<div class="panel-heading">
+					<strong><f:translate key="info.legend"></f:translate></strong>
+				</div>
+				<div class="panel-body">
+					<span class="glyphicon glyphicon-ok-sign"></span>
+					<span class="description">
+						<f:translate key="info.extension_is_ok"></f:translate>
+					</span>
+					<hr class="fine-line" />
+					<span class="glyphicon glyphicon-ok-sign" style="color: orange"></span>
+					<span class="description">
+						<f:translate key="info.extension_requires_update"></f:translate>
+					</span>
+					<hr class="fine-line" />
+					<span class="glyphicon glyphicon-remove-sign"></span>
+					<span class="description">
+						<f:translate key="info.extension_is_incompatible"></f:translate>
+					</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>

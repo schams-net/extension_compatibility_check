@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-01T00:00:00Z" product-name="extension_compatibility_check">
+		<header/>
+		<body>
+
+			<trans-unit id="title">
+				<source>Extension Compatibility Check</source>
+			</trans-unit>
+
+			<trans-unit id="extension_purpose_paragraph_1" xml:space="preserve">
+				<source>This module allows TYPO3 integrators and administrators to check if the extensions currently installed in the system are TYPO3 CMS 7.6 compatible and/or if a new, compatible version exists. This information is important in particular when you plan an upgrade of your TYPO3 CMS 6.2 instance to version 7.6. The checks use the data from the extension list in your local system. Therefore it is inevitable that the list is up-to-date.</source>
+			</trans-unit>
+			<trans-unit id="extension_purpose_paragraph_2" xml:space="preserve">
+				<source>It is also important to point out that the compatibility settings of extensions are defined by the extension developers. This means it is not guaranteed that the settings are correct.</source>
+			</trans-unit>
+			<trans-unit id="extension_purpose_paragraph_3" xml:space="preserve">
+				<source>Please read the official documentation prior a TYPO3 upgrade for further details:</source>
+			</trans-unit>
+			<trans-unit id="extensionlist_last_update" xml:space="preserve">
+				<source>The last update was on</source>
+			</trans-unit>
+
+			<trans-unit id="unable_to_continue" xml:space="preserve">
+				<source>Fatal error - unable to continue</source>
+			</trans-unit>
+			<trans-unit id="button.label.continue" xml:space="preserve">
+				<source>continue</source>
+			</trans-unit>
+			<trans-unit id="button.label.execute" xml:space="preserve">
+				<source>execute checks</source>
+			</trans-unit>
+			<trans-unit id="button.label.info" xml:space="preserve">
+				<source>info</source>
+			</trans-unit>
+			<trans-unit id="button.label.reload" xml:space="preserve">
+				<source>reload</source>
+			</trans-unit>
+
+			<trans-unit id="flashmessage.wrong_typo3_version.message" xml:space="preserve">
+				<source>This module requires a TYPO3 CMS version 6.2 LTS instance.</source>
+			</trans-unit>
+			<trans-unit id="flashmessage.wrong_typo3_version.headline" xml:space="preserve">
+				<source>Invalid TYPO3 CMS Version</source>
+			</trans-unit>
+			<trans-unit id="flashmessage.incompatible_php_version.message" xml:space="preserve">
+				<source>The PHP version currently used on this system is incompatible with TYPO3 CMS 7.6 LTS.</source>
+			</trans-unit>
+			<trans-unit id="flashmessage.incompatible_php_version.headline" xml:space="preserve">
+				<source>Incompatible PHP Version</source>
+			</trans-unit>
+
+			<trans-unit id="table.header.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="table.header.extension_key" xml:space="preserve">
+				<source>Extension key</source>
+			</trans-unit>
+			<trans-unit id="table.header.installed_version" xml:space="preserve">
+				<source>Installed version</source>
+			</trans-unit>
+			<trans-unit id="table.header.is_compatible_with" xml:space="preserve">
+				<source>is compatible with</source>
+			</trans-unit>
+			<trans-unit id="table.header.compatibility" xml:space="preserve">
+				<source>compatibility</source>
+			</trans-unit>
+
+			<trans-unit id="from" xml:space="preserve">
+				<source>from</source>
+			</trans-unit>
+			<trans-unit id="to" xml:space="preserve">
+				<source>to</source>
+			</trans-unit>
+
+			<trans-unit id="info.legend" xml:space="preserve">
+				<source>Legend</source>
+			</trans-unit>
+			<trans-unit id="info.extension_is_installed" xml:space="preserve">
+				<source>extension is currently installed and active</source>
+			</trans-unit>
+			<trans-unit id="info.extension_is_not_installed" xml:space="preserve">
+				<source>extension is currently installed, but inactive</source>
+			</trans-unit>
+			<trans-unit id="info.extension_is_ok" xml:space="preserve">
+				<source>currently installed extension version is ok</source>
+			</trans-unit>
+			<trans-unit id="info.extension_requires_update" xml:space="preserve">
+				<source>currently installed extension version is incompatible, but a compatible version is available</source>
+			</trans-unit>
+			<trans-unit id="info.extension_is_incompatible" xml:space="preserve">
+				<source>extension is incompatible and a compatible version is not available</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

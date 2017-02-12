@@ -1,0 +1,98 @@
+{namespace vh = SchamsNet\ExtensionCompatibilityCheck\ViewHelpers}
+<f:layout name="Default" />
+<f:section name="Content">
+
+	<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>&nbsp;</th>
+			<th><f:translate key="table.header.name">Name</f:translate></th>
+			<th><f:translate key="table.header.extension_key">Extension Key</f:translate></th>
+			<th><f:translate key="table.header.installed_version">Installed version</f:translate></th>
+			<th colspan="4">
+				<f:translate key="table.header.installed_version">Installed version</f:translate><br />
+				<f:translate key="table.header.is_compatible_with">is compatible with</f:translate>
+			</th>
+			<th>
+				TYPO3 CMS {typo3RefenceVersion}
+				<f:translate key="table.header.compatibility">compatibility</f:translate>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		<f:for each="{extensionlist}" as="extension">
+
+			<f:if condition="{extension.key} != 'extension_compatibility_check'">
+			<tr>
+				<td>
+					<f:if condition="{extension.installed}">
+					<f:then>
+						<span class="glyphicon glyphicon-stop is-installed"></span>
+					</f:then>
+					<f:else>
+						<span class="glyphicon glyphicon-stop is-not-installed"></span>
+					</f:else>
+					</f:if>
+				</td>
+				<td>{extension.title}</td>
+				<td>
+					<f:link.external uri="https://typo3.org/extensions/repository/view/{extension.key}" name="TYPO3 Extension Repository" target="_blank">
+						<code>{extension.key}</code>
+					</f:link.external>
+				</td>
+				<td>{extension.version}</td>
+				<td>TYPO3 CMS</td>
+				<td><vh:versionExtractor versionsMinMax="{extension.constraints.depends.typo3}" minOrMax="min" /></td>
+				<td><f:translate key="table.header.to">to</f:translate></td>
+				<td><vh:versionExtractor versionsMinMax="{extension.constraints.depends.typo3}" minOrMax="max" /></td>
+				<td>
+					<div class="extensionList"
+						data-typo3-reference-version="{typo3RefenceVersion}"
+						data-extension-key="{extension.key}"
+						data-extension-reference-version="{extension.version}"
+						data-extension-current-version-dependency="{extension.constraints.depends.typo3}"
+						>
+						<div class="icon pull-left">
+							<span class="loading"></span>
+							<span class="glyphicon glyphicon-ok-sign hidden"></span>
+							<span class="glyphicon glyphicon-remove-sign hidden"></span>
+						</div>
+						<div class="message">
+							&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>
+			</f:if>
+
+		</f:for>
+
+	</tbody>
+	</table>
+
+	<div class="row">
+		<div class="col-md-6">
+			<button class="btn btn-default btn-execute-checks pull-left">
+				<f:translate key="button.label.execute">execute checks</f:translate>
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</button>
+		</div>
+		<div class="col-md-6">
+			<div class="pull-right">
+				<!-- <button class="btn btn-default btn-getinfo" data-toggle="modal" data-target="#InfoModal"></button> -->
+				<button class="btn btn-default btn-getinfo">
+					<f:translate key="button.label.info">info</f:translate>
+					<span class="glyphicon glyphicon-info-sign"></span>
+				</button>
+				<f:link.action action="list" class="btn btn-default btn-reload pull-right">
+					<f:translate key="button.label.reload">reload</f:translate>
+					<span class="glyphicon glyphicon-refresh"></span>
+				</f:link.action>
+			</div>
+		</div>
+	</div>
+
+	<f:render partial="InfoModal" />
+
+</f:section>

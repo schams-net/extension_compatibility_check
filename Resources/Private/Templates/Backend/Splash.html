@@ -1,0 +1,37 @@
+{namespace em=TYPO3\CMS\Extensionmanager\ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="Content">
+
+	<p><f:translate key="extension_purpose_paragraph_1"></f:translate></p>
+	<p>
+		<strong>
+			<f:translate key="extensionlist_last_update"></f:translate>:
+			<f:format.date format="d/M/Y">{repository.lastUpdate}</f:format.date>
+			(<em:timeSinceLastUpdate lastUpdateTime="{repository.lastUpdate}"></em:timeSinceLastUpdate>)
+		</strong>
+	</p>
+
+	<p><f:translate key="extension_purpose_paragraph_2"></f:translate></p>
+	<p>
+		<f:translate key="extension_purpose_paragraph_3"></f:translate>
+		<f:link.external uri="https://docs.typo3.org/typo3cms/InstallationGuide/6.2/" target="_blank">TYPO3 Installation and Upgrade Guide</f:link.external>.
+	</p>
+
+	<hr />
+
+	<f:if condition="{showButtonContinue}">
+	<f:then>
+		<f:link.action action="list" class="btn btn-default btn-continue">
+			<f:translate key="button.label.continue">continue</f:translate>
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</f:link.action>
+	</f:then>
+	<f:else>
+		<div class="alert alert-danger" role="alert">
+			<p><f:translate key="unable_to_continue"></f:translate></p>
+		</div>
+	</f:else>
+	</f:if>
+
+</f:section>

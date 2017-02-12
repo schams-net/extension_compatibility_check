@@ -1,0 +1,5 @@
+module.tx_extensioncompatibilitycheck {
+	settings {
+		repositoryUid = 1
+	}
+}

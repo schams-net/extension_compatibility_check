@@ -1,0 +1,219 @@
+/*
+ * This file is part of the TYPO3 CMS Extension "Extension Compatibility Check"
+ * Extension author: Michael Schams - https://schams.net
+ *
+ * For copyright and license information, please read the LICENSE.txt
+ * file distributed with this source code.
+ *
+ * @package     TYPO3
+ * @subpackage  extension_compatibility_check
+ * @author      Michael Schams <schams.net>
+ * @link        https://schams.net
+ */
+
+body {
+    font-size: 12px;
+    line-height: 1.5em;
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+}
+
+#typo3-docheader .typo3-docheader-functions,
+#typo3-docheader .typo3-docheader-buttons {
+    box-sizing: unset;
+}
+
+#typo3-docheader .typo3-docheader-buttons .right .identifier {
+    font-weight: bold;
+    color: #555555;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .module-header {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .module-header h1 {
+    margin-bottom: 0;
+}
+
+div#typo3-mod-extensioncompatibilitycheck h1,
+div#typo3-mod-extensioncompatibilitycheck h2 {
+    color: #555555;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+}
+
+div#typo3-mod-extensioncompatibilitycheck h1 {
+    font-family: Share,Verdana,Arial,Helvetica,sans-serif;
+    font-size: 2.3em;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1.1em;
+    margin: 0 0 30px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck h2 {
+    font-size: 1.4em;
+    margin: 24px 0 12px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table {
+    border-bottom: 1px solid #dddddd;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table thead {
+    background-color: #666666;
+    color: #ffffff;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table thead th:nth-child(4) {
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody {
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(1) {
+    width: 1%;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(2) {
+    width: 1%;
+    white-space: nowrap;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(3) {
+    width: 1%;
+    white-space: nowrap;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(4) {
+    width: 1%;
+    white-space: nowrap;
+    text-align: right;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(5) {
+    width: 1%;
+    white-space: nowrap;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(6) {
+    width: 1%;
+    white-space: nowrap;
+    text-align: right;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(7) {
+    width: 1%;
+    white-space: nowrap;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(8) {
+    width: 1%;
+    white-space: nowrap;
+    text-align: right;
+    padding-left: 0;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(9) {
+    white-space: nowrap;
+}
+
+div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(10) {
+    width: 1%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+div#typo3-mod-extensioncompatibilitycheck code {
+    background-color: transparent;
+    border-radius: none;
+    color: #666666;
+    padding: 2px 4px;
+    font-weight: bold;
+}
+
+div#typo3-mod-extensioncompatibilitycheck div.icon {
+    position: relative;
+}
+
+div#typo3-mod-extensioncompatibilitycheck div.icon .loading {
+    margin: 6px 5px 5px 14px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck span.glyphicon.is-installed {
+    font-size: 1.4em;
+    color: green;
+}
+
+div#typo3-mod-extensioncompatibilitycheck span.glyphicon.is-not-installed {
+    font-size: 1.4em;
+    color: red;
+}
+
+div#typo3-mod-extensioncompatibilitycheck span.glyphicon.glyphicon-ok-sign {
+    font-size: 1.6em;
+    color: green;
+    line-height: 14px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck span.glyphicon.glyphicon-remove-sign {
+    font-size: 1.6em;
+    color: red;
+    line-height: 14px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck div.message {
+    margin-left: 30px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .btn {
+    border-radius: 0;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .btn-continue {
+}
+
+div#typo3-mod-extensioncompatibilitycheck .btn-continue .glyphicon {
+    margin-left: 6px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .btn-execute-checks {
+}
+
+div#typo3-mod-extensioncompatibilitycheck .btn-execute-checks .glyphicon {
+    margin-left: 6px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .btn-getinfo {
+    margin-right: 2px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .btn-getinfo .glyphicon {
+    margin-left: 6px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .btn-reload {
+}
+
+div#typo3-mod-extensioncompatibilitycheck .btn-reload .glyphicon {
+    margin-left: 6px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .info {
+    margin-top: 20px;
+    display: none;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .info .glyphicon {
+    font-size: 0.8em;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .info hr.fine-line {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
