@@ -71,27 +71,52 @@
 	</tbody>
 	</table>
 
-	<div class="row">
-		<div class="col-md-6">
-			<button class="btn btn-default btn-execute-checks pull-left">
-				<f:translate key="button.label.execute">execute checks</f:translate>
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			</button>
-		</div>
-		<div class="col-md-6">
-			<div class="pull-right">
-				<!-- <button class="btn btn-default btn-getinfo" data-toggle="modal" data-target="#InfoModal"></button> -->
-				<button class="btn btn-default btn-getinfo">
-					<f:translate key="button.label.info">info</f:translate>
-					<span class="glyphicon glyphicon-info-sign"></span>
+
+	<f:if condition="{extensionlist -> f:count()}>1">
+	<f:then>
+
+<f:comment>
+
+		<!--
+			Number of extensions should be -1, because EXT:extension_compatibility_check is not shown in the list.
+			However using another ViewHelper just to decrease the number of elements in {extensionlist} seems to
+			be overkilled.
+		-->
+
+		<p class="number-of-extensions hidden">
+			<f:translate key="number_of_extensions">Number of extensions:</f:translate>
+			<f:count>{extensionlist}</f:count>
+		</p>
+</f:comment>
+
+		<div class="row margin-top">
+			<div class="col-md-6">
+				<button class="btn btn-default btn-execute-checks pull-left">
+					<f:translate key="button.label.execute">execute checks</f:translate>
+					<span class="glyphicon glyphicon-chevron-right"></span>
 				</button>
-				<f:link.action action="list" class="btn btn-default btn-reload pull-right">
-					<f:translate key="button.label.reload">reload</f:translate>
-					<span class="glyphicon glyphicon-refresh"></span>
-				</f:link.action>
+			</div>
+			<div class="col-md-6">
+				<div class="pull-right">
+					<!-- <button class="btn btn-default btn-getinfo" data-toggle="modal" data-target="#InfoModal"></button> -->
+					<button class="btn btn-default btn-getinfo">
+						<f:translate key="button.label.info">info</f:translate>
+						<span class="glyphicon glyphicon-info-sign"></span>
+					</button>
+					<f:link.action action="list" class="btn btn-default btn-reload pull-right">
+						<f:translate key="button.label.reload">reload</f:translate>
+						<span class="glyphicon glyphicon-refresh"></span>
+					</f:link.action>
+				</div>
 			</div>
 		</div>
-	</div>
+	</f:then>
+	<f:else>
+		<div class="alert alert-danger no-extensions-found">
+			<f:translate key="no_extensions_found">No extensions found.</f:translate>
+		</div>
+	</f:else>
+	</f:if>
 
 	<f:render partial="InfoModal" />
 

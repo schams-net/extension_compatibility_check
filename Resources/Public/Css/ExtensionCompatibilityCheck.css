@@ -61,6 +61,7 @@ div#typo3-mod-extensioncompatibilitycheck h2 {
 
 div#typo3-mod-extensioncompatibilitycheck table {
     border-bottom: 1px solid #dddddd;
+    margin-bottom: 0;
 }
 
 div#typo3-mod-extensioncompatibilitycheck table thead {
@@ -127,6 +128,10 @@ div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(10) {
     width: 1%;
     text-align: right;
     white-space: nowrap;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .margin-top {
+    margin-top: 20px;
 }
 
 div#typo3-mod-extensioncompatibilitycheck code {
@@ -216,4 +221,15 @@ div#typo3-mod-extensioncompatibilitycheck .info .glyphicon {
 div#typo3-mod-extensioncompatibilitycheck .info hr.fine-line {
     margin-top: 4px;
     margin-bottom: 4px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .number-of-extensions {
+    color: #808080;
+    text-align: left;
+    font-weight: bold;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .no-extensions-found {
+    text-align: center;
+    font-weight: bold;
 }
