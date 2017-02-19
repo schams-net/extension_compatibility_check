@@ -39,11 +39,11 @@ License
 
 This software free software; you can redistribute it and/or modify it under the terms of the GNU General Public License, either version 2 of the License, or any later version. For the full copyright and license information, please see the documentation that was distributed with this source code.
 
-The GNU General Public License can be found at:\
+The GNU General Public License can be found at:  
 http://www.gnu.org/copyleft/gpl.html
 
 
 Author
 ------
-Michael Schams <schams.net>\
+Michael Schams <schams.net>  
 <https://github.com/schams-net/extension_compatibility_check>
