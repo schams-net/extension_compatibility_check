@@ -16,6 +16,7 @@ namespace SchamsNet\ExtensionCompatibilityCheck\Controller;
 
 use SchamsNet\ExtensionCompatibilityCheck\Utility\BackendSessionHandler;
 use SchamsNet\ExtensionCompatibilityCheck\Utility\Extension;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 
 /**
@@ -23,6 +24,21 @@ use TYPO3\CMS\Core\Utility\VersionNumberUtility;
  */
 class AjaxRequestHandler extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+    /**
+     * Keywords of check results, also used in JavaScript file
+     * See Resources/Public/JavaScript/ExtensionCompatibilityCheck.js
+     */
+    const AJAX_CHECK_RESULT_FAILED = 'failed';
+    const AJAX_CHECK_RESULT_UPDATE = 'update';
+    const AJAX_CHECK_RESULT_OK = 'ok';
+
+    /**
+     * Extension key
+     *
+     * @access private
+     */
+    private $extensionKey = 'extension_compatibility_check';
+
     /**
      * @var \TYPO3\CMS\Extensionmanager\Domain\Repository\ExtensionRepository
      * @inject
@@ -165,13 +181,19 @@ class AjaxRequestHandler extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
             if (count($dependencies) == 0) {
                 $dependencies = array(
-                    'result' => 'failed',
-                    'message' => 'No TYPO3 CMS ' . $typo3ReferenceVersion . ' compatible version available'
+                    'result' => self::AJAX_CHECK_RESULT_FAILED,
+                    'message' => htmlentities(
+                        LocalizationUtility::translate(
+                            'ajax.message.no_compatible_version_available',
+                            $this->extensionKey,
+                            array($typo3ReferenceVersion)
+                        )
+                    )
                 );
             } else {
                 $compatible = current($dependencies);
 
-                // String representation of version (e.g. 6.2.30)
+                // String representation of version (e.g. "6.2.30")
                 $compatibleExtensionVersion = $compatible['extension_version'];
 
                 // Numeric representation of version string (e.g. 6002030)
@@ -180,17 +202,26 @@ class AjaxRequestHandler extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
                 );
 
                 $dependencies = array(
-                    'result' => 'ok',
-                    'message' =>
-                        'Extension is TYPO3 CMS ' . $typo3ReferenceVersion .
-                        ' compatible since version ' . $compatibleExtensionVersion
+                    'result' => self::AJAX_CHECK_RESULT_OK,
+                    'message' => htmlentities(
+                        LocalizationUtility::translate(
+                            'ajax.message.already_compatible_since_version',
+                            $this->extensionKey,
+                            array($typo3ReferenceVersion, $compatibleExtensionVersion)
+                        )
+                    )
                 );
 
                 if ($extensionReferenceVersionNumeric != 0
                  && $extensionReferenceVersionNumeric < $compatibleExtensionVersionInteger
                   ) {
-                    $dependencies['result'] = 'update';
-                    $dependencies['message'].= ' (update available)';
+                    $dependencies['result'] = self::AJAX_CHECK_RESULT_UPDATE;
+                    $dependencies['message'].= ' ' . htmlentities(
+                        LocalizationUtility::translate(
+                            'ajax.message.update_available',
+                            $this->extensionKey
+                        )
+                    );
                 }
             }
         } else {
@@ -201,16 +232,26 @@ class AjaxRequestHandler extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
                 if ($max >= $typo3ReferenceVersionNumeric) {
                     $dependencies = array(
-                        'result' => 'ok',
-                        'message' => 'Update not required'
+                        'result' => self::AJAX_CHECK_RESULT_OK,
+                        'message' => htmlentities(
+                            LocalizationUtility::translate(
+                                'ajax.message.update_not_required',
+                                $this->extensionKey
+                            )
+                        )
                     );
                 }
             }
 
             if (count($dependencies) == 0) {
                 $dependencies = array(
-                    'result' => 'failed',
-                    'message' => 'Extension not found in database - no compatible update available'
+                    'result' => self::AJAX_CHECK_RESULT_FAILED,
+                    'message' => htmlentities(
+                        LocalizationUtility::translate(
+                            'ajax.message.extension_not_found',
+                            $this->extensionKey
+                        )
+                    )
                 );
             }
         }

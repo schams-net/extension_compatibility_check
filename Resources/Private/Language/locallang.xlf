@@ -98,6 +98,23 @@
 			<trans-unit id="no_extensions_found" xml:space="preserve">
 				<source>The TYPO3 CMS instance does not contain any installed extensions.</source>
 			</trans-unit>
+
+			<trans-unit id="ajax.message.no_compatible_version_available" xml:space="preserve">
+				<source>No TYPO3 CMS %s compatible version available</source>
+			</trans-unit>
+			<trans-unit id="ajax.message.already_compatible_since_version" xml:space="preserve">
+				<source>Extension is TYPO3 CMS %s compatible since version %s</source>
+			</trans-unit>
+			<trans-unit id="ajax.message.update_available" xml:space="preserve">
+				<source>(update available)</source>
+			</trans-unit>
+			<trans-unit id="ajax.message.update_not_required" xml:space="preserve">
+				<source>Update not required</source>
+			</trans-unit>
+			<trans-unit id="ajax.message.extension_not_found" xml:space="preserve">
+				<source>Extension not found in database - no compatible update available</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
