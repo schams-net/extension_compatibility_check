@@ -38,6 +38,18 @@ div#typo3-mod-extensioncompatibilitycheck .module-header h1 {
     margin-bottom: 0;
 }
 
+div#typo3-mod-extensioncompatibilitycheck .margin-top {
+    margin-top: 20px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .margin-bottom {
+    margin-top: 20px;
+}
+
+div#typo3-mod-extensioncompatibilitycheck .typo3-message {
+    margin-bottom: 20px;
+}
+
 div#typo3-mod-extensioncompatibilitycheck h1,
 div#typo3-mod-extensioncompatibilitycheck h2 {
     color: #555555;
@@ -128,10 +140,6 @@ div#typo3-mod-extensioncompatibilitycheck table tbody td:nth-child(10) {
     width: 1%;
     text-align: right;
     white-space: nowrap;
-}
-
-div#typo3-mod-extensioncompatibilitycheck .margin-top {
-    margin-top: 20px;
 }
 
 div#typo3-mod-extensioncompatibilitycheck code {

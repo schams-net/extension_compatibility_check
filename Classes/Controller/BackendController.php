@@ -16,6 +16,7 @@ namespace SchamsNet\ExtensionCompatibilityCheck\Controller;
 
 use SchamsNet\ExtensionCompatibilityCheck\Utility\Extension;
 use TYPO3\CMS\Extensionmanager\Utility\ListUtility;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * Backend Controller
@@ -136,8 +137,8 @@ class BackendController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         if (version_compare(TYPO3_version, '6.2.0', '<') || version_compare(TYPO3_version, '6.2.999', '>')) {
             $showButtonContinue = false;
             $this->addFlashMessage(
-                htmlspecialchars($this->translate('flashmessage.wrong_typo3_version.message')),
-                htmlspecialchars($this->translate('flashmessage.wrong_typo3_version.headline')),
+                htmlentities(LocalizationUtility::translate('flashmessage.wrong_typo3_version.message', $this->extensionKey)),
+                htmlentities(LocalizationUtility::translate('flashmessage.wrong_typo3_version.headline', $this->extensionKey)),
                 \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR,
                 true
             );
@@ -147,8 +148,8 @@ class BackendController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         // current PHP version is not TYPO3 CMS 7.6 compatible.
         if (version_compare(PHP_VERSION, '5.5.0', '<') || version_compare(PHP_VERSION, '7.0.999', '>')) {
             $this->addFlashMessage(
-                htmlspecialchars($this->translate('flashmessage.incompatible_php_version.message')),
-                htmlspecialchars($this->translate('flashmessage.incompatible_php_version.headline')),
+                htmlentities(LocalizationUtility::translate('flashmessage.incompatible_php_version.message', $this->extensionKey)),
+                htmlentities(LocalizationUtility::translate('flashmessage.incompatible_php_version.headline', $this->extensionKey)),
                 \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING,
                 true
             );
