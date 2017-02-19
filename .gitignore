@@ -1,0 +1,14 @@
+*~
+*.bak
+*.swp
+*.rej
+*.orig
+nbproject
+*.idea
+*.project
+.buildpath
+.project
+.settings
+.TemporaryItems
+.webprj
+.php_cs.cache
