@@ -34,6 +34,7 @@ if (TYPO3_MODE === 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
             'Backend' => 'splash, list'
         ),
         array(
+            'access' => 'admin',
             'icon' => 'EXT:' . $_EXTKEY . '/Resources/Public/Backend/Icons/ext_icon.png',
             'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang.be.xlf',
         )
