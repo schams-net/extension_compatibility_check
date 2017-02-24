@@ -15,11 +15,11 @@
 
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'Extension Compatibility Check',
-    'description' => 'Lists TYPO3 compatibility of installed extensions.',
+    'description' => 'TYPO3 CMS extension to check the compatibility status of currently installed extensions in TYPO3 CMS 6.2 LTS.",
     'category' => 'module',
-    'version' => '0.0.1',
+    'version' => '1.0.0',
     'module' => '',
-    'state' => 'beta',
+    'state' => 'stable',
     'createDirs' => '',
     'clearcacheonload' => 0,
     'author' => 'Michael Schams (schams.net)',
@@ -28,7 +28,7 @@ $EM_CONF[$_EXTKEY] = array(
     'constraints' => array(
         'depends' => array(
             'typo3' => '6.2.0-6.2.99',
-            'php' => '5.3.7-5.6.99',
+            'php' => '5.4.0-5.6.99',
         ),
         'conflicts' => array(
         ),
