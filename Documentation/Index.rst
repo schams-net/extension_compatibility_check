@@ -16,7 +16,7 @@ Extension Compatibility Check
       ``extension_compatibility_check``
 
 :Version:
-      1.0.0
+      1.0.1
 
 :Language:
       en
