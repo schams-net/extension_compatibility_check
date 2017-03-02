@@ -16,7 +16,7 @@ Extension Compatibility Check
       ``extension_compatibility_check``
 
 :Version:
-      1.0.1
+      1.0.2
 
 :Language:
       en
@@ -57,3 +57,4 @@ Table of Contents
    Screenshots/Index
    ResultsAndActions/Index
    SecondaryChecks/Index
+   KnownIssues/Index

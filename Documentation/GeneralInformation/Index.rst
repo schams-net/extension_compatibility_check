@@ -15,7 +15,7 @@ Introduction
 
 The official maintenance period of TYPO3 CMS version 6.2 LTS ends in March 2017. Agencies, TYPO3 integrators, developers and website owners face the challenge of upgrading their existing 6.2 instances to the new TYPO3 CMS version 7.6 LTS. In many cases updating the TYPO3 core is not a problem. However, extensions are often not maintained the same way as the TYPO3 core is, and some extensions are not 7.6 compatible at all.
 
-The **Extension Compatibility Check** extension supports integrators in the review process, prior executing the upgrade. Installed in a TYPO3 CMS 6.2 LTS instance, the extension allows backend administrators to run a check to determine which extensions are compatible, which extensions require an update and which extensions need to be replaced (e.g. because no 7.6 compatible version exists).
+The "Extension Compatibility Check" extension supports integrators in the review process, prior executing the upgrade. Installed in a TYPO3 CMS 6.2 LTS instance, the extension allows backend administrators to run a check to determine which extensions are compatible, which extensions require an update and which extensions need to be replaced (e.g. because no 7.6 compatible version exists).
 
 It is important to understand that this extension does not modify, update or replace any existing extensions or fix any PHP code. The purpose of this extension is to generate a report about installed extension compatibility with TYPO3 7.6 LTS.
 
