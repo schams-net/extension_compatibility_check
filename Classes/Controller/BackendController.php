@@ -111,7 +111,8 @@ class BackendController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             'extKey' => $this->extensionKey,
             'identifier' => $this->identifier,
             'controller' => $this->request->getControllerName(),
-            'action' => $this->request->getControllerActionName()
+            'action' => $this->request->getControllerActionName(),
+            'layout' => $this->getLayoutFilename()
         );
     }
 
@@ -209,5 +210,37 @@ class BackendController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         // Assign variables to the view
         $this->view->assign('typo3RefenceVersion', $this->typo3RefenceVersion);
         $this->view->assign('extensionlist', $extensionlist);
+    }
+
+    /**
+     * Returns the filename of the layout based on the current TYPO3 CMS version
+     *
+     * @access private
+     * @return string
+     */
+    private function getLayoutFilename()
+    {
+        $layout = 'Default';
+        if (version_compare(TYPO3_version, '6.2.0', '<')) {
+            $layout = 'Default';
+        }
+        elseif (version_compare(TYPO3_version, '7.0.0', '<')) {
+            // TYPO3 CMS 6.2
+            $layout = 'Default62';
+        }
+        elseif (version_compare(TYPO3_version, '7.6.0', '<')) {
+            // TYPO3 CMS 7.0 to 7.5
+            $layout = 'Default7x';
+        }
+        elseif (version_compare(TYPO3_version, '8.0.0', '<')) {
+            // TYPO3 CMS 7.6
+            $layout = 'Default76';
+        }
+        elseif (version_compare(TYPO3_version, '7.6.0', '>')) {
+            // TYPO3 CMS 8.0 to ...
+            $layout = 'Default8x';
+        }
+
+        return $layout;
     }
 }

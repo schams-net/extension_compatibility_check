@@ -1,6 +1,6 @@
 {namespace em=TYPO3\CMS\Extensionmanager\ViewHelpers}
 
-<f:layout name="Default" />
+<f:layout name="{layout}" />
 <f:section name="Content">
 
 	<p><f:translate key="extension_purpose_paragraph_1"></f:translate></p>
@@ -28,9 +28,11 @@
 		</f:link.action>
 	</f:then>
 	<f:else>
+		<!--
 		<div class="alert alert-danger" role="alert">
 			<p><f:translate key="unable_to_continue"></f:translate></p>
 		</div>
+		-->
 	</f:else>
 	</f:if>
 
