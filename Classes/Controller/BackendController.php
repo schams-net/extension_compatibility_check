@@ -79,7 +79,7 @@ class BackendController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     }
 
     /**
-     * Inject Backend Session Handler
+     * Inject Extension Repository from TYPO3 Extension Manager
      *
      * @access public
      * @param \TYPO3\CMS\Extensionmanager\Domain\Repository\RepositoryRepository $session
